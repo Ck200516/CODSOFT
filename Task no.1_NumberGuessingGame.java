@@ -8,7 +8,7 @@ public class NumberGuessingGame {
         boolean playAgain = true;
         int totalScore = 0;
 
-        System.out.println("🎮 Welcome to the Number Guessing Game!");
+        System.out.println("Welcome to the Number Guessing Game!");
 
         while (playAgain) {
             int numberToGuess = random.nextInt(100) + 1; // Random number between 1 and 100
@@ -32,28 +32,28 @@ public class NumberGuessingGame {
                 }
 
                 if (userGuess < 1 || userGuess > 100) {
-                    System.out.println("❗ Please guess a number between 1 and 100.");
+                    System.out.println(" Please guess a number between 1 and 100.");
                     i--;
                     continue;
                 }
 
                 if (userGuess == numberToGuess) {
-                    System.out.println("🎉 Congratulations! You guessed the number correctly in " + i + " attempts!");
+                    System.out.println(" Congratulations! You guessed the number correctly in " + i + " attempts!");
                     hasWon = true;
                     totalScore += (numberOfAttempts - i + 1) * 10; // Score logic
                     break;
                 } else if (userGuess < numberToGuess) {
-                    System.out.println("🔼 Too low! Try again.");
+                    System.out.println("Too low! Try again.");
                 } else {
-                    System.out.println("🔽 Too high! Try again.");
+                    System.out.println(" Too high! Try again.");
                 }
             }
 
             if (!hasWon) {
-                System.out.println("😢 You've used all your attempts. The correct number was: " + numberToGuess);
+                System.out.println(" You've used all your attempts. The correct number was: " + numberToGuess);
             }
 
-            System.out.println("💯 Your current score: " + totalScore);
+            System.out.println("Your current score: " + totalScore);
 
             System.out.print("Do you want to play again? (yes/no): ");
             String response = sc.nextLine().toLowerCase();
